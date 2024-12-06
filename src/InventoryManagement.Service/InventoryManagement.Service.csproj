@@ -7,8 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Implementations\EmployeeService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\InventoryManagement.Core\InventoryManagement.Core.csproj" />
     <ProjectReference Include="..\InventoryManagement.Infrastructure\InventoryManagement.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Implementations\" />
+    <Folder Include="Interfaces\" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InventoryManagement.Core.Models.Entities;
 
-[Index(nameof(Username), IsUnique = true)]
-[Index(nameof(Email), IsUnique = true)]
+
 public class User
 {
     [Key]
@@ -28,12 +26,12 @@ public class User
 
     public DateTime CreateDate { get; set; }
 
-    public int CreateUser { get; set; }
+    public int? CreateUser { get; set; }
 
 
     public DateTime LastUpdateDate { get; set; }
 
-    public int LastUpdateUser { get; set; }
+    public int? LastUpdateUser { get; set; }
 
     [InverseProperty("CreateUserNavigation")]
     public ICollection<AuditLog> AuditLogCreateUserNavigations { get; set; } = new List<AuditLog>();
@@ -49,7 +47,7 @@ public class User
 
     [ForeignKey(nameof(CreateUser))]
     [InverseProperty("InverseCreateUserNavigation")]
-    public User CreateUserNavigation { get; set; } = null!;
+    public User? CreateUserNavigation { get; set; }
 
     [InverseProperty("CreateUserNavigation")]
     public ICollection<Customer> CustomerCreateUserNavigations { get; set; } = new List<Customer>();
@@ -71,7 +69,7 @@ public class User
 
     [ForeignKey(nameof(LastUpdateUser))]
     [InverseProperty("InverseLastUpdateUserNavigation")]
-    public User LastUpdateUserNavigation { get; set; } = null!;
+    public User? LastUpdateUserNavigation { get; set; }
 
     [InverseProperty("CreateUserNavigation")]
     public ICollection<PaymentType> PaymentTypeCreateUserNavigations { get; set; } = new List<PaymentType>();

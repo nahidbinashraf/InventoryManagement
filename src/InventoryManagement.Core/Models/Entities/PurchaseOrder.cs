@@ -8,7 +8,6 @@ public class PurchaseOrder
     [Key]
     public int PurchaseOrderId { get; set; }
 
-
     public DateTime OrderDate { get; set; }
 
     public int SupplierId { get; set; }

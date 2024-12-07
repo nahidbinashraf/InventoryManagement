@@ -9,7 +9,6 @@ public class Sale
     [Key]
     public int SaleId { get; set; }
 
-
     public DateTime SaleDate { get; set; }
 
     [Column(TypeName = "decimal(18, 2)")]

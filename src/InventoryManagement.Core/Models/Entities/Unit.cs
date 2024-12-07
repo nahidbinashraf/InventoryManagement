@@ -1,11 +1,8 @@
-﻿
-using Microsoft.EntityFrameworkCore;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace InventoryManagement.Core.Models.Entities;
 
-[Index(nameof(UnitName), IsUnique = true)]
 public class Unit
 {
     [Key]
